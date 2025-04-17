@@ -3,7 +3,7 @@
 }
 
 body {
-    font-family: "Karla", sans-serif;
+    font-family: "Montserrat", sans-serif;
     margin: 0;
 }
 
@@ -51,14 +51,15 @@ main {
     grid-column: 1 / -1;
     border-radius: 5px;
     background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
+    font-size: 18px;
     color: white;
-    border: none;
+    border: none
     cursor: pointer;
 }
 
 .form input, .form button {
     min-height: 40px;
-    font-family: "Karla", sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 
 .meme {
