@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { preview } from "vite";
 
 function Main() {
   const [meme, setMeme] = useState({
@@ -17,14 +18,24 @@ function Main() {
   }, []);
 
   
-  
   const handleChange = (event) => {
     const {value, name} = event.currentTarget;
+    
     setMeme(prevMeme => ({
-        ...prevMeme,
-        [name]: value /* dynamically update the property  */
+      ...prevMeme,
+      [name]: value /* dynamically update the property  */
     }));
   }
+
+  const getRandomMeme = () => {
+    const position = Math.floor(Math.random() * allMemes.length);
+    const randomMeme = allMemes[position].url;
+    
+    setMeme(prevMeme => ({ 
+      ...prevMeme,
+      imageUrl: randomMeme
+    }));  
+  }  
 
   return (
     <main>
@@ -48,7 +59,7 @@ function Main() {
             value={meme.bottomText}
           />
         </label>
-        <button>Get a new meme</button>
+        <button onClick={getRandomMeme}>Get a new meme</button>
       </div>
       <div className="meme">
         <img src={meme.imageUrl} alt="Meme" />
